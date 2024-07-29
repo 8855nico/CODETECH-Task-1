@@ -1,8 +1,13 @@
 **Nane:**Nicolas Marandi
+
 **Company:**CODETECH IT SOLUTION PVT LTD
+
 **ID:**CT08DS5176
+
 **Domain:**INTERNET OF THINGS
+
 **Duration:**JULY 15TH TO AUGUST 15TH 2024
+
 **Mentor:**Muzammil Ahmed
 
 
