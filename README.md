@@ -217,7 +217,7 @@ export default App;
 ## Web interface output
 
 
-<img src="C:\Users\DELL\Pictures\fg.JPG">
+<img src="https://miro.medium.com/v2/1*lw5ULtUQBmP_CY8aJbKBxg.png">
 
 
 
