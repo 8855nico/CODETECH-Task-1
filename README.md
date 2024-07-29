@@ -217,7 +217,7 @@ export default App;
 ## Web interface output
 
 
-![Alt text](JPG File (.JPG))
+<img src="C:\Users\DELL\Pictures\fg.JPG">
 
 
 
