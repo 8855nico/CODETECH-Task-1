@@ -11,15 +11,15 @@
 **Mentor:** Muzammil Ahmed
 
 
-#### Overview of the Project
+# Overview of the Project
 
-#### Project:IoT-Based Smart Home System
+### Project:IoT-Based Smart Home System
 
- ### Project Goal
+ ## Project Goal
  
  The primary goal of this project is to create an IoT-based smart home system that allows users to control home appliances such as lights, fans, and thermostats remotely via a mobile app or web interface. The project will utilize popular IoT development platforms like Arduino and Raspberry Pi to build the hardware components and integrate them with software solutions for user interaction and control.
 
- #### Key Components
+ ## Key Components
  
  **Hardware Components:**
  
@@ -33,7 +33,7 @@
 
 **Power Supply:** Adequate power supply for the microcontroller and connected components
 
-#### Software Components:
+## Software Components:
 
 **Firmware for Microcontroller:** Code running on Arduino/Raspberry Pi to manage appliance control
 .
@@ -41,7 +41,7 @@
 
 **Mobile App/Web Interface:** For users to remotely control appliances.
 
-#### System Architecture
+## System Architecture
 
 ## Microcontroller Setup:
 
@@ -66,7 +66,7 @@ Sensors are connected to gather environmental data which can be used to automate
 
 **Web Interface:** Built using modern web development frameworks like React or Vue.js.
 
-#### Development Steps
+## Development Steps
 
 ## Hardware Configuration:
 
@@ -91,7 +91,7 @@ Test the communication between the mobile app/web interface, backend server, and
 Verify the control of appliances through the user interface.
 Debug and troubleshoot any issues that arise during testing.
 
-### Example Code Snippets
+## Example Code Snippets
 
 ## Arduino with ESP8266 for MQTT Communication:
 
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
 
-### React Web Interface:
+## React Web Interface:
 
 ## javascript
 
