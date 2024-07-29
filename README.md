@@ -214,6 +214,12 @@ function App() {
 
 export default App;
 
+## Web interface output
+
+
+![Alt text](JPG File (.JPG))
+
+
 
 ## Conclusion
 
