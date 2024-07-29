@@ -215,7 +215,7 @@ function App() {
 export default App;
 
 
-### Conclusion
+## Conclusion
 
 As the conclusion, a prototype of smart home automation system can be developed with
 Arduino Mega 2560 as microcontroller. Besides, ultrasonic sensor and LM35 temperature
