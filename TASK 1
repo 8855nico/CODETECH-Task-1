@@ -1,0 +1,152 @@
+Arduino Example (with ESP8266 for WiFi)
+C++
+
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+
+// WiFi and MQTT settings
+const char* ssid = "your-SSID";
+const char* password = "your-PASSWORD";
+const char* mqtt_server = "your-MQTT-SERVER";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+void setup() {
+  pinMode(D1, OUTPUT); // Relay connected to D1
+  Serial.begin(115200);
+  setup_wifi();
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+}
+
+void setup_wifi() {
+  delay(10);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  String message;
+  for (int i = 0; i < length; i++) {
+    message += (char)payload[i];
+  }
+
+  if (String(topic) == "home/appliance") {
+    if (message == "ON") {
+      digitalWrite(D1, HIGH);
+    } else if (message == "OFF") {
+      digitalWrite(D1, LOW);
+    }
+  }
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    if (client.connect("ESP8266Client")) {
+      Serial.println("connected");
+      client.subscribe("home/appliance");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      delay(5000);
+    }
+  }
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+}
+
+
+Raspberry Pi Example (Python with Flask)
+
+from flask import Flask, request, jsonify
+import RPi.GPIO as GPIO
+
+app = Flask(__name__)
+
+# Setup GPIO pins
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)  # Example for a relay
+
+@app.route('/control', methods=['POST'])
+def control():
+    data = request.json
+    appliance = data['appliance']
+    state = data['state']
+    
+    if appliance == 'light' and state == 'on':
+        GPIO.output(18, GPIO.HIGH)
+    elif appliance == 'light' and state == 'off':
+        GPIO.output(18, GPIO.LOW)
+    
+    return jsonify({'status': 'success'})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
+
+React Example for Web Interface
+
+javascript
+
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [state, setState] = useState('off');
+
+  const handleToggle = async () => {
+    const newState = state === 'off' ? 'on' : 'off';
+    setState(newState);
+    await axios.post('http://your-backend-server/control', {
+      appliance: 'light',
+      state: newState
+    });
+  };
+
+  return (
+    <div>
+      <h1>Smart Home Control</h1>
+      <button onClick={handleToggle}>
+        Turn Light {state === 'off' ? 'On' : 'Off'}
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
