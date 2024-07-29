@@ -1,19 +1,19 @@
-**Nane:**Nicolas Marandi
+**Nane:** Nicolas Marandi
 
-**Company:**CODETECH IT SOLUTION PVT LTD
+**Company:** CODETECH IT SOLUTION PVT LTD
 
-**ID:**CT08DS5176
+**ID:**  CT08DS5176
 
-**Domain:**INTERNET OF THINGS
+**Domain:** INTERNET OF THINGS
 
-**Duration:**JULY 15TH TO AUGUST 15TH 2024
+**Duration:** JULY 15TH TO AUGUST 15TH 2024
 
-**Mentor:**Muzammil Ahmed
+**Mentor:** Muzammil Ahmed
 
 
-###Overview of the Project
+### Overview of the Project
 
-###Project:IoT-Based Smart Home System
+### Project:IoT-Based Smart Home System
 
  ### Project Goal
  
@@ -25,7 +25,7 @@
  
  **Microcontroller/Single-Board Computer:** Arduino or Raspberry Pi for controlling appliances.
  
-**Relays/Switches:**To switch appliances on and off.
+**Relays/Switches:** To switch appliances on and off.
 
 **Sensors:** For monitoring environmental conditions (e.g., temperature, humidity).
 
@@ -33,7 +33,7 @@
 
 **Power Supply:** Adequate power supply for the microcontroller and connected components
 
-###Software Components:
+### Software Components:
 
 **Firmware for Microcontroller:** Code running on Arduino/Raspberry Pi to manage appliance control
 .
@@ -41,50 +41,51 @@
 
 **Mobile App/Web Interface:** For users to remotely control appliances.
 
-###System Architecture
+### System Architecture
 
-##Microcontroller Setup:
+## Microcontroller Setup:
 
 **Arduino:** Programmed with C++ using the Arduino IDE, equipped with ESP8266 for WiFi connectivity
 .
 **Raspberry Pi:** Programmed using Python, running a web server using Flask to handle HTTP requests.
 
-##Appliance Control:
+## Appliance Control:
 
 Relays are connected to the microcontroller to switch appliances on and off based on received commands.
 Sensors are connected to gather environmental data which can be used to automate appliance control.
-##Communication Protocol:
+
+## Communication Protocol:
 
 **MQTT:** Lightweight messaging protocol for small sensors and mobile devices (Arduino setup).
 
 **HTTP/REST API:** For sending commands from the backend server to the Raspberry Pi.
 
-##User Interface:
+## User Interface:
 
 **Mobile App:** Built using frameworks like React Native, allowing cross-platform functionality.
 
 **Web Interface:** Built using modern web development frameworks like React or Vue.js.
 
-###Development Steps
+### Development Steps
 
-##Hardware Configuration:
+## Hardware Configuration:
 
 Assemble the Arduino or Raspberry Pi with relays, sensors, and WiFi module.
 Connect the relays to the appliances you want to control.
-##Firmware Development:
+## Firmware Development:
 
 Write and upload code to the Arduino to handle MQTT communication and control relays.
 Write Python scripts for Raspberry Pi to handle GPIO pins and HTTP requests.
-##Backend Server Setup:
+## Backend Server Setup:
 
 Develop a server (using Node.js, Python Flask, or Django) to handle incoming commands from the mobile app/web interface.
 Implement endpoints to communicate with the microcontroller.
-##Mobile App/Web Interface Development:
+## Mobile App/Web Interface Development:
 
 Develop the user interface allowing users to send control commands to the backend server.
 Implement features for user authentication, appliance control, and status monitoring.
 
-##Integration and Testing:
+## Integration and Testing:
 
 Test the communication between the mobile app/web interface, backend server, and microcontroller.
 Verify the control of appliances through the user interface.
